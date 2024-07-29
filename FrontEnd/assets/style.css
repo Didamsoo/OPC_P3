@@ -239,6 +239,10 @@ li:hover {
 
 /*_____________GALLERY_______________*/
 
+.gallery figcaption {
+	margin-top: 5px;
+}
+
 .gallery {
 	width: 100%;
 	display: grid;
@@ -251,9 +255,14 @@ li:hover {
 	width: 100%;
 
 }
+
+
+
+
+/*_____________CONTACT_______________*/
 #contact {
 	width: 50%;
-margin: auto;
+	margin: auto;
 }
 #contact > * {
 	text-align: center;
@@ -294,6 +303,9 @@ input[type="submit"]{
 	border-radius: 60px ;
 }
 
+
+
+/*_____________FOOTER_______________*/
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;

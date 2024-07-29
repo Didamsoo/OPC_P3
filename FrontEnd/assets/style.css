@@ -153,14 +153,16 @@ li:hover {
 
 
 
-
+/*_________________INTRODUCTION____________________*/
 #introduction {
 	display: flex;
 	align-items: center;
 }
+
 #introduction figure {
 	flex: 1
 }
+
 #introduction img {
 	display: block;
 	margin: auto;
@@ -170,6 +172,7 @@ li:hover {
 #introduction article {
 	flex: 1
 }
+
 #introduction h2 {
 	margin-bottom: 1em;
 }
@@ -177,10 +180,65 @@ li:hover {
 #introduction p {
 	margin-bottom: 0.5em;
 }
-#portfolio h2 {
-	text-align: center;
-	margin-bottom: 1em;
+
+
+
+
+
+
+/*_________________PORTFOLIO____________________*/
+#portfolio {
+	margin-bottom: 50px;
 }
+
+#portfolio h2 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 2em;
+}
+
+
+/*_____________FILTER & CATEGORIES_______________*/
+.filtres {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-bottom: 50px;
+}
+
+.categorie {
+	display: flex;
+	border: 1px solid #1D6154;
+	border-radius: 60px;
+	color: #1D6154;
+	background-color: #FFFEF8;
+	font-size: 16px;
+	font-weight: 700;
+	font-family: 'Syne';
+	align-items: center;
+	height: 37px;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+.selectedCategory {
+	background-color: #1D6154;
+	color: #FFFEF8;
+}
+
+.categorie:hover {
+	background-color: #1D6154;
+	color: #FFFEF8;
+}
+
+
+
+
+
+
+/*_____________GALLERY_______________*/
+
 .gallery {
 	width: 100%;
 	display: grid;

@@ -47,19 +47,20 @@ table {
 	border-spacing: 0;
 }
 /** end reset css**/
+
+
+
+/*_________________GENERAL_________________*/
 body {
 	max-width: 1140px;
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
+	background: #FFFEF8;
 }
-header {
-	display: flex;
-	justify-content: space-between;
-	margin: 50px 0
-}
+
 section {
-	margin: 50px 0
+	margin: 100px 0
 }
 
 h1{
@@ -84,6 +85,37 @@ h2{
 	font-size: 30px;
 	color: #1D6154
 }
+
+
+
+
+
+
+
+
+
+/*_____________________HEADER_________________________*/
+
+.BarEdit {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	background-color: #000000;
+	color: white;
+	padding: 22px;
+
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0;
+}
+
+
 nav ul {
 	display: flex;
 	align-items: center;
@@ -95,9 +127,33 @@ nav li {
 	font-size: 1.2em;
 }
 
+nav a {
+	text-decoration: none;
+	color: inherit;
+}
+
+nav img {
+	width: 22px;
+	height: 22px;
+	margin-top: 3px;
+}
+
+.navLink {
+	font-weight: bold;
+}
+
 li:hover {
 	color: #B1663C;
 }
+
+
+
+
+
+
+
+
+
 #introduction {
 	display: flex;
 	align-items: center;

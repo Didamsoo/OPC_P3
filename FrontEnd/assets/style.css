@@ -50,7 +50,7 @@ table {
 
 
 
-/*_________________GENERAL_________________*/
+/*___________________________________________________GENERAL________________________________________________________*/
 body {
 	max-width: 1140px;
 	margin:auto;
@@ -89,12 +89,237 @@ h2{
 
 
 
+/*________________________________________________MODAL_______________________________________________________*/
+
+.modal {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.4);
+}
+
+.modalEdit {
+	border-radius: 10px;
+	background-color: white;
+	width: 630px;
+	max-width: 100vw;
+	height: 690px;
+	max-height: 100vh;
+	overflow: auto;
+}
+
+
+/*_______modal header______*/
+.modalButton {
+	display: flex;
+	justify-content: flex-end;
+	margin: 30px 30px 0px 30px;
+	gap: 525px;
+}
+
+#backButton {
+	display: none;
+}
+
+#backButton, #closeButton {
+	cursor: pointer;
+	border: none;
+	background-color: white;
+	padding: 0;
+}
+
+#backButton .fa-solid {
+	font-size: 21px;
+	width: 21px;
+}
+
+#closeButton .fa-solid {
+	font-size: 24px;
+	width: 24px;
+}
+
+.modalTitle {
+	display: flex;
+	justify-content: center;
+}
+
+h3 {
+	font-family: 'Work Sans';
+	font-size: 26px;
+	line-height: 30px;
+}
+
+
+/*_______ Modal Gallery ______*/
+.modalContent {
+	display: grid;
+	justify-content: center;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-row-gap: 30px;
+	margin: 50px 105px 40px 105px;
+	max-height: 38vh;
+	overflow-y: auto;
+	border-bottom: solid 1px #B3B3B3;
+	padding-bottom: 60px;
+}
+
+.modalWork {
+	display: flex;
+	justify-content: center;
+	position: relative;
+}
+
+.modalWork img {
+	height: 102px;
+	width: 76px;
+}
+
+.modalWork i {
+	position: absolute;
+	top: 5px;
+	right: 9px;
+	cursor: pointer;
+	color: white;
+	font-size: 11px;
+	border-radius: 2px;
+	padding: 3px 3.70px;
+	background-color: black;
+}
+
+
+/*_______ Modal Ajout Travaux ______*/
+.modalForm {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	margin: 50px 105px 40px 105px;
+	gap: 10px;
+	border-bottom: solid 2px #B3B3B3;
+	padding-bottom: 46px;
+}
+
+#addForm {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 3px;
+	background-color: #E8F1F6;
+	width: 420px;
+	height: 169px;
+}
+
+#addForm .fa-regular {
+	color: #CBD6DC;
+	font-size: 76px;
+	margin-bottom: 10px;
+}
+
+.fileUploadButton {
+	border: none;
+	border-radius: 50px;
+	background-color: #CBD6DC;
+	font-family: 'Work Sans';
+	color: #306685;
+	font-size: 14px;
+	padding: 10px 33px;
+	cursor: pointer;
+	margin-bottom: 5px;
+}
+
+#fileUpload {
+	display: none;
+}
+
+.fileUploadButton span {
+	font-weight: bold;
+}
+
+.acceptedFiles {
+	font-size: 12px;
+	font-weight: 400;
+	color: #444444;
+}
+
+.imagePreview {
+	max-width: 100%;
+	max-height: 169px;
+}
+
+#addInfoForm {
+	display: none;
+	flex-direction: column;
+	width: 420px;
+}
+
+#addInfoForm label {
+	margin: 1.5em 0 1em 0;
+	color: #3D3D3D;
+	font-weight: bold;
+}
+
+#addTitle, #addCategory {
+	border: none;
+	outline: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	font-family: 'Work Sans';
+	font-size: 14px;
+	color: #444444;
+	padding: 0px 15px;
+	height: 51px;
+	appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+#addCategory {
+	background-image: url('./icons/chevron-down-24.png');
+	background-repeat: no-repeat;
+    background-position: right 25px center;
+    background-size: 12px 12px;
+    cursor: pointer;
+}
+
+
+/*_______ Modal Button ______*/
+.add-button {
+	display: flex;
+	justify-content: center;
+}
+
+#addImage, #addConfirm {
+	border: none;
+	border-radius: 60px;
+	background-color: #1D6154;
+	color: white;
+	width: 237px;
+	padding: 10px 0px;
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+#addConfirm {
+	display: none;
+}
 
 
 
 
 
-/*_____________________HEADER_________________________*/
+
+
+
+
+
+
+/*_____________________________________________HEADER________________________________________________*/
 
 .BarEdit {
 	display: flex;
@@ -153,7 +378,7 @@ li:hover {
 
 
 
-/*_________________INTRODUCTION____________________*/
+/*_______________________________________________INTRODUCTION_________________________________________________*/
 #introduction {
 	display: flex;
 	align-items: center;
@@ -186,7 +411,9 @@ li:hover {
 
 
 
-/*_________________PORTFOLIO____________________*/
+
+
+/*____________________________________________________PORTFOLIO________________________________________________________*/
 #portfolio {
 	margin-bottom: 50px;
 }
@@ -199,7 +426,11 @@ li:hover {
 }
 
 
-/*_____________FILTERS & CATEGORIES_______________*/
+
+
+
+
+/*__________________________________________________FILTERS & CATEGORIES________________________________________________*/
 .filtres {
 	display: flex;
 	justify-content: center;
@@ -237,7 +468,11 @@ li:hover {
 
 
 
-/*_____________GALLERY_______________*/
+
+
+
+
+/*_____________________________________________________GALLERY_____________________________________________________________*/
 
 .gallery figcaption {
 	margin-top: 5px;
@@ -260,7 +495,11 @@ li:hover {
 
 
 
-/*____________________CONNEXION_______________________*/
+
+
+
+
+/*________________________________________________________CONNEXION______________________________________________________________*/
 .connexion {
 	display: flex;
 	flex-direction: column;
@@ -304,7 +543,13 @@ li:hover {
 
 
 
-/*_____________CONTACT_______________*/
+
+
+
+
+
+
+/*________________________________________________________CONTACT___________________________________________________________*/
 #contact {
 	width: 50%;
 	margin: auto;
@@ -350,7 +595,13 @@ input[type="submit"]{
 
 
 
-/*_____________FOOTER_______________*/
+
+
+
+
+
+
+/*________________________________________________________FOOTER________________________________________________________*/
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;

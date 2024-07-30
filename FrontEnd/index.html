@@ -17,9 +17,9 @@
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
-			<li>projets</li>
-			<li>contact</li>
-			<li>login</li>
+			<li><a href="index.html" class="navLink">projets</a></li>
+			<li><a href="#contact">contact</a></li>
+			<li><a href="login.html" id="loginButton">login</a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -62,6 +62,50 @@
 		</form>
 	</section>
 </main>
+
+
+<aside id="modalPopup" class="modal" aria-hidden="true">
+	<div class="modalEdit" id="modalEdit">
+		<div class="modalButton">
+			<button id="backButton"><i class="fa-solid fa-arrow-left"></i></button>
+			<button id="closeButton"><i class="fa-solid fa-xmark"></i></button>
+		</div>
+		<div class="modalTitle">
+			<h3>Galerie photo</h3>
+		</div>
+		<div class="modalContent">
+
+		</div>
+		<div class="modalForm">
+			<form id="addForm">
+				<i class="fa-regular fa-image"></i>
+				<button type="button" class="fileUploadButton">
+					<span>+ Ajouter photo</span>
+				</button>
+				<input type="file" id="fileUpload" accept=".jpg, .png" name="file">
+				<p class="acceptedFiles">jpg, png : 4mo max</p>
+			</form>
+			<form id="addInfoForm">
+				<label for="addTitle">Titre</label>
+				<input type="text" name="addTitle" id="addTitle">
+				<label for="addCategory">Catégorie</label>
+				<select name="addCategory" id="addCategory">
+				</select>
+			</form>
+		</div>
+		<div class="add-button">
+		<button id="addImage">Ajouter une photo</button>
+		<button id="addConfirm">Valider</button>
+		</div>
+	</div>
+</aside>
+
+
+
+
+
+
+
 
 <footer>
 	<nav>

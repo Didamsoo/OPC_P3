@@ -1,36 +1,22 @@
-//_______________________________RÉCUPÉRATION DES DONNÉES D'API____________________//
+// RÉCUPÉRATION DES DONNÉES DE L'API
 
 const url='http://localhost:5678/api/'
 
-//________CATÉGORIES______//
+
+//_______________________________ CATEGORIES _____________________________//
 export async function getCategories() {
     return fetch(`${url}categories`)
         .then(response => response.json())
 }
-//________RECUPERATION DES TRAVAUX______//
+
+
+//_______________________________ RECUPERER LES TRAVAUX _____________________________//
 export async function getWorks() {
     return fetch(`${url}works`)
         .then(response => response.json())
 }
 
-
-//________AJOUT DE NOUVEAUX TRAVAUX______//
-export async function addNewWork(formData) {
-    let token = sessionStorage.getItem('token')
-    const response = await fetch(`${url}works`, {
-        method: 'POST',
-        headers: {
-            authorization: `Bearer ${token}`
-        },
-        body: formData
-    })
-    if (!response.ok) {
-        throw new Error('Une erreur est survenue lors de l\'ajout du travail.')
-    }
-    return response.json()
-}
-
-//________SUPPRESSION DES TRAVAUX______//
+//_______________________________ SUPPRESSION TRAVAUX _____________________________//
 export async function deleteWork(id) {
     let token = sessionStorage.getItem('token')
     const response = await fetch(`${url}works/${id}`, {
@@ -42,7 +28,24 @@ export async function deleteWork(id) {
 }
 
 
-//________LOGIN______//
+//_______________________________ AJOUT DE NOUVEAUX TRAVAUX _____________________________//
+export async function addNewWork(formData) {
+    let token = sessionStorage.getItem('token')
+    const response = await fetch(`${url}works`, {
+        method: 'POST',
+        headers: {
+            authorization: `Bearer ${token}`
+        },
+        body: formData
+    })
+    if (!response.ok) {
+        throw new Error('Erreur lors de l\'ajout du travail.')
+    }
+    return response.json()
+}
+
+
+//_______________________________ LOGIN _____________________________//
 export async function login () {
     document.addEventListener('submit', (event) => {
         event.preventDefault()
@@ -64,9 +67,10 @@ export async function login () {
             }),
         })
         .then(response => response.json())
+        // (Stockage du token d'authentification)
         .then((data) => {
             if (data.message) {
-                alert("Identifiant ou mot de passe incorrect")
+                alert("Erreur dans l’identifiant ou le mot de passe")
             } else {
                 sessionStorage.setItem("token", data.token)
                 window.location.replace("index.html")
@@ -74,5 +78,3 @@ export async function login () {
         })
     })
 }
-
-

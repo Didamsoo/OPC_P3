@@ -4,8 +4,8 @@ import {getCategories, deleteWork, addNewWork} from "./api.js"
 export function createCategory(category) {
     const filters = document.querySelector('.filtres')
     
-    const filterCategory = document.createElement('button')
-    filterCategory.classList.add('categorie')
+    const filterCategory = document.createElement('button') // Je crée un bouton pour la catégorie
+    filterCategory.classList.add('categorie') // J'ajoute une classe pour le styliser
     filterCategory.setAttribute('value', category.id)
 
     const categoryName = document.createElement('span')
@@ -16,27 +16,27 @@ export function createCategory(category) {
 }
 
 export function createCategoryAll() {
-    createCategory({id: 0, name:'Tous'})
+    createCategory({id: 0, name:'Tous'}) // J'ajoute un bouton "Tous" pour afficher toutes les catégories
 }
 
 
 //_______________________________ CREATION DES TRAVAUX _____________________________//
 export function createWork(work) {
-    const gallery = document.querySelector('.gallery')
-    const workCard = document.createElement('figure')
+    const gallery = document.querySelector('.gallery') // Sélection de la galerie pour afficher les projets
+    const workCard = document.createElement('figure') // Création d'une carte pour chaque projet
     workCard.setAttribute('data-id', work.id)
     workCard.setAttribute('category-id', work.categoryId)
 
-    const workImage = document.createElement('img')
+    const workImage = document.createElement('img') // Ajout de l'image du projet
     workImage.src = work.imageUrl
     workImage.alt = work.title
 
-    const workTitle = document.createElement('figcaption')
+    const workTitle = document.createElement('figcaption') //Titree du projet 
     workTitle.innerText = work.title
 
     workCard.appendChild(workImage)
     workCard.appendChild(workTitle)
-    gallery.appendChild(workCard)
+    gallery.appendChild(workCard) // Insertion du projet dans la galerie
 }
 
 //_______________________________ FILTRER LES TRAVAUX _____________________________//

@@ -3,10 +3,11 @@ import {createCategory, createCategoryAll, createWork, filterWorksByCategory, ad
 
 
 //_______________________________ RECUPERATION DES TRAVAUX ET DES CATEGORIES _____________________________//
-const categories = await getCategories()
-createCategoryAll()
+// Je récupère les catégories et les travaux depuis l'API
+const categories = await getCategories()// Récupération des catégories
+createCategoryAll() // Création d'un bouton "Tous" pour afficher toutes les catégories
 categories.forEach(category => {
-    createCategory(category)
+    createCategory(category) // J'affiche chaque catégorie dans le DOM
 })
 
 const works = await getWorks()
@@ -27,32 +28,32 @@ categoriesElement.forEach(category => {
         categoriesElement.forEach(category => category.classList.remove('selectedCategory'))
         category.classList.add('selectedCategory')
 
-        filterWorksByCategory(CategoryId)
+        filterWorksByCategory(CategoryId) // Filtrage dynamique des projets en fonction de la catégorie
     })
 })
 
 //_______________________________ ADMIN MODE _____________________________//
 
-await adminRights()
+await adminRights() // Active le mode admin si l'utilisateur est connecté
 
 //_______________________________ MODAL GALLERY _____________________________//
 
 const modalPopup = await getWorks()
 const modalContent = document.querySelector('.modalContent')
-modalContent.innerHTML = ""
+modalContent.innerHTML = "" // Réinitialisation de la galerie modale
 
 modalPopup.forEach(modalWork => {
-    createModalWork(modalWork)
+    createModalWork(modalWork) // Création dynamique des projets dans la modale
 })
 
 //_______________________________ MODAL ONGLET - AJOUTS DE WORKS _____________________________//
 
-await addModalWork()
+await addModalWork() // Gestion de l'ajout de projets dans la modale
 
 //_______________________________ AFFICHAGE LISTE CATEGORIES - AJOUTS DE WORKS  _____________________________//
 
-await selectCategory()
+await selectCategory() // Affichage des catégories dans la modale
 
 //_______________________________ UPLOAD _____________________________//
 
-await upload()
+await upload() // Gestion de l'upload d'images
